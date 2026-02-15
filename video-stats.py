@@ -92,7 +92,6 @@ def extract_video_data(video_ids):
             data = response.json()
 
             for item in data.get("items", []):
-                # ... (ο κώδικας εξαγωγής δεδομένων παραμένει ίδιος)
                 video_data = {
                     "video_id": item["id"],
                     "title": item["snippet"]["title"],
@@ -104,7 +103,6 @@ def extract_video_data(video_ids):
                 }
                 extracted_data.append(video_data)
 
-        # ΔΙΟΡΘΩΣΗ: Το return πρέπει να είναι ΕΞΩ από το for loop (μία θέση αριστερά)
         return extracted_data
 
     except requests.exceptions.RequestException as e:
